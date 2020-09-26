@@ -1,0 +1,67 @@
+
+POST http://localhost:80/api/user/login HTTP/1.1
+content-type: application/json
+
+{
+  "username": "test",
+  "password": "test"
+}
+
+### GET BUILDS
+GET http://localhost:80/api/build/base HTTP/1.1
+
+### GET BUILD WITH GIVEN ID
+GET http://localhost:80/api/build/4ba2f67c-b822-4831-b698-cbb88e24e9ec HTTP/1.1
+
+### DELETE BUILD FROM DATABASE
+DELETE http://localhost:80/api/build/4ba2f67c-b822-4831-b698-cbb88e24e9ec HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNvbmZpZ21hc3RlciIsImlhdCI6MTU5MzI0ODU2NH0.Y3xypZBXI4rqKp2oguO-fTnF7p_UoRlLwu4J1bMBxic
+
+### CREATE NEW BUILD WITH A POST REQUEST
+POST http://localhost:80/api/build/new HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNvbmZpZ21hc3RlciIsImlhdCI6MTU5MzI0ODU2NH0.Y3xypZBXI4rqKp2oguO-fTnF7p_UoRlLwu4J1bMBxic
+
+{
+  "price": 1250,
+  "name": "Bayek",
+  "cpuBrand": "INTEL",
+  "gpuBrand": "NVIDIA",
+  "description": "Altra configurazione ancora",
+  "CPU": {
+    "asin": "B07MQP5LNM",
+    "label": "Intel 9600k"
+  },
+  "Scheda Madre": {
+    "asin": "B07HS8HK8F",
+    "label": "ASUS PRIME Z390-A"
+  },
+  "Alimentatore": {
+    "asin": "B0773MXYM8",
+    "label": "Antec EA550G pro"
+  },
+  "Case": {
+    "asin": "B08697KS69",
+    "label": "Aerocool Glider Cosmo"
+  },
+  "RAM": {
+    "asin": "B083TSFGBP",
+    "label": "Crucial Ballistix (8GB x2) CL15"
+  },
+  "GPU": {
+    "asin": "B07HNMT91C",
+    "label": "ASUS 2080ti Strix"
+  },
+  "SSD": {
+    "asin": "B07KQZ1Z53",
+    "label": "Silicon Power 1TB"
+  },
+  "HDD": {
+    "asin": "B0151KM3I0",
+    "label": "Toshiba P300"
+  },
+  "Dissipatore": {
+    "asin": "B07D3L3YT7",
+    "label": "Deepcool castle 240mm"
+  }
+}
