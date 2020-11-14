@@ -40,9 +40,9 @@ const coolerSchema = Joi.object({
 
 export const createBuildSchema = Joi.object({
   name: Joi.string().required(),
-  price: Joi.number().integer().min(600).required(),
+  price: Joi.number().integer().min(400).required(),
   cpuBrand: Joi.string().valid("AMD", "INTEL").required(),
-  gpuBrand: Joi.string().valid("AMD", "NVIDIA").required(),
+  gpuBrand: Joi.string().valid("AMD", "NVIDIA").allow(""),
   imageUrl: Joi.string().uri().optional().allow(""),
   subTitle: Joi.string().min(10).optional().allow(""),
   description: Joi.string().min(50).optional().allow(""),
