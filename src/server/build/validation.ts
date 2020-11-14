@@ -21,7 +21,7 @@ const ramSchema = Joi.object({
   label: Joi.string().min(5).required(),
 });
 const gpuSchema = Joi.object({
-  asin: Joi.string().length(10),
+  asin: Joi.string().length(10).allow(""),
   label: Joi.string().min(5).allow(""),
 });
 const ssdSchema = Joi.object({
