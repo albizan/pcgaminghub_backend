@@ -174,7 +174,12 @@ export async function getCompleteBuild(ctx) {
 
   try {
     const build = await buildRepository.findOne(id, { relations: ["items"] });
-
+    build.items.forEach(item => {
+      if(item.url) {
+        item.url = item.url.replace("hwgrouptech0c-21", "wasabe-21")
+      }
+    })
+    console.log(build.items)
     if (!build) {
       ctx.body = "Configurazione non trovata";
       ctx.status = 404;
