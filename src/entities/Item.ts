@@ -30,6 +30,9 @@ export class Item {
   time: string;
 
   @Column({ nullable: true, type: "real" })
+  suggestedPrice: number;
+
+  @Column({ nullable: true, type: "real" })
   price: number;
 
   @Column({ nullable: true, type: "real" })
