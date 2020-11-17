@@ -165,21 +165,21 @@ export async function getBaseBuildInfo(ctx) {
 }
 
 export async function getCompleteBuild(ctx) {
-  const id = ctx.params?.id;
-  if (!id) {
+  const name = ctx.params?.name;
+  if (!name) {
     ctx.status = 400;
     return;
   }
   const buildRepository = getRepository(Build);
 
   try {
-    const build = await buildRepository.findOne(id, { relations: ["items"] });
+    const build = await buildRepository.findOne({name: name}, { relations: ["items"] });
     build.items.forEach(item => {
       if(item.url) {
         item.url = item.url.replace("hwgrouptech0c-21", "wasabe-21")
       }
     })
-    console.log(build.items)
+    // console.log(build.items)
     if (!build) {
       ctx.body = "Configurazione non trovata";
       ctx.status = 404;

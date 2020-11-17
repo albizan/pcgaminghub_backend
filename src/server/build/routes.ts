@@ -8,7 +8,7 @@ const router = new Router({
 });
 
 router.get("/base", getBaseBuildInfo);
-router.get("/:id", getCompleteBuild);
+router.get("/:name", getCompleteBuild);
 router.post("/new", authVerifier, createBuild);
 router.put("/:id", authVerifier, updateBuild);
 router.delete("/:id", authVerifier, deleteBuild);
