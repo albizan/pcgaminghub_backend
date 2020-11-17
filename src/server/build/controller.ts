@@ -190,7 +190,6 @@ export async function getCompleteBuild(ctx) {
     ctx.status = 200;
     return;
   } catch (error) {
-    console.log("ERROR:", error);
     ctx.body = error;
     ctx.status = 500;
     return;
